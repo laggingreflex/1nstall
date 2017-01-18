@@ -79,6 +79,8 @@ one npm --saveDev jquery
 one yarn --dev jquery
 # or
 one y jquery
+# or
+one -yd jquery
 ```
 
 ## Caveats
