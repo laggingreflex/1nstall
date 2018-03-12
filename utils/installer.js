@@ -1,11 +1,11 @@
-import path from 'path';
-import { exec } from './child-process';
-import {
+const path = require('path');
+const { exec } = require('./child-process');
+const {
   generateTempDir,
   outputPackageJson,
-} from './fs';
+} = require('./fs');
 
-export async function install({ package: packageLiteral, yarn, tmpdir, saveDev = false } = {}) {
+const install = exports.install = async ({ package: packageLiteral, yarn, tmpdir, saveDev = false } = {}) => {
   tmpdir = tmpdir || generateTempDir();
   const [packageName, packageVersion] = packageLiteral.split(/@/);
   await outputPackageJson(tmpdir, {});
@@ -30,5 +30,4 @@ export async function install({ package: packageLiteral, yarn, tmpdir, saveDev =
   }
   await exec(command, args, { cwd: tmpdir });
   return tmpdir;
-}
-
+};

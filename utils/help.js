@@ -1,7 +1,7 @@
-import packageJson from '../../package.json';
+const packageJson = require('../../package.json');
 
-export function printUsage( exit ) {
-  console.log( `
+module.exports = (exit) => {
+  console.log(`
     ${packageJson.description}
 
     Usage: dockere [OPTION]
@@ -13,8 +13,8 @@ export function printUsage( exit ) {
       dockere
       dockere -d nodejs -m
       dockere -d ubuntu -c echo ok
-  ` );
-  if ( exit ) {
-    process.exit( 0 );
+  `);
+  if (exit) {
+    process.exit(0);
   }
 }

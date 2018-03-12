@@ -1,23 +1,24 @@
-import os from 'os';
-import path from 'path';
-import fs from 'fs-promise';
-import sortObject from 'sort-object';
-import _ from 'lodash';
+const os = require('os');
+const path = require('path');
+const fs = require('fs-promise');
+const sortObject = require('sort-object');
+const _ = require('lodash');
 
-export const generateID = () => 'xxxxxxxx'
+const generateID = exports.generateID = () => 'xxxxxxxx'
   .replace(/x/g, x => Math.random()
     .toString(36)
     .replace(/[^a-z]+/g, '')
     .substr(0, 1));
 
-export const generateTempDir = () => path.join(os.tmpdir(), '1nstall', generateID());
+const generateTempDir = exports.generateTempDir = () => path.join(os.tmpdir(), '1nstall', generateID());
 
-export function getPackageJson(dir) {
+const getPackageJson = exports.getPackageJson = (dir) => {
   const file = path.join(dir, 'package.json');
   console.log(`Reading ${file}...`);
   return fs.readJson(file);
 }
-export async function outputPackageJson(dir, data) {
+
+const outputPackageJson = exports.outputPackageJson = async (dir, data) => {
   const file = path.join(dir, 'package.json');
   const fileBkp = path.join(dir, `package.bkp.${Date.now() + 0}.json`);
   try {
@@ -25,9 +26,9 @@ export async function outputPackageJson(dir, data) {
   } catch (err) {}
   console.log(`Creating ${file}...`);
   return fs.outputJson(file, data);
-}
+};
 
-export async function move({ package: packageLiteral, cwd, tmpdir, debug = false }) {
+const move = exports.move = async ({ package: packageLiteral, cwd, tmpdir, debug = false }) => {
   const [packageName] = packageLiteral.split(/@/);
 
   const movePackage = {
@@ -111,5 +112,4 @@ export async function move({ package: packageLiteral, cwd, tmpdir, debug = false
     console.error('  ' + error.message);
   }
   console.log('  done');
-}
-
+};

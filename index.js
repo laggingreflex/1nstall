@@ -1,8 +1,9 @@
-import 'source-map-support/register';
-import arrify from 'arrify';
-import config from './config';
-import { install } from './utils/installer';
-import { move } from './utils/fs';
+#!/usr/bin/env node
+
+const arrify = require('arrify');
+const config = require('./config');
+const { install } = require('./utils/installer');
+const { move } = require('./utils/fs');
 
 async function main() {
   await Promise.all(arrify(config.package).map(async (pkgName) => {
