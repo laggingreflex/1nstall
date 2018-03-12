@@ -25,7 +25,8 @@ const outputPackageJson = exports.outputPackageJson = async (dir, data) => {
     await fs.copy(file, fileBkp);
   } catch (err) {}
   console.log(`Creating ${file}...`);
-  return fs.outputJson(file, data);
+  await fs.outputJson(file, data);
+  await fs.remove(fileBkp);
 };
 
 const move = exports.move = async ({ package: packageLiteral, cwd, tmpdir, debug = false }) => {
