@@ -1,9 +1,11 @@
 {
   "name": "1nstall",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Install a package as if it was the only package",
   "main": "index.js",
-  "bin": { "one": "index.js" },
+  "bin": {
+    "one": "index.js"
+  },
   "repository": "laggingreflex/1nstall",
   "dependencies": {
     "arrify": "^1.0.1",
