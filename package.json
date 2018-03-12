@@ -1,6 +1,6 @@
 {
   "name": "1nstall",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Install a package as if it was the only package",
   "main": "index.js",
   "bin": {
