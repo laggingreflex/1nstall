@@ -14,7 +14,6 @@
     "inquirer": "^1.2.2",
     "lodash": "^4.16.4",
     "sort-object": "^3.0.2",
-    "source-map-support": "^0.4.5",
     "yargs": "^6.3.0"
   }
 }
