@@ -15,7 +15,7 @@ const install = exports.install = async ({ package: packageLiteral, yarn, tmpdir
     command = 'npm';
     args = ['install'];
     if (saveDev) {
-      args.push('--saveDev');
+      args.push('--save-dev');
     } else {
       args.push('--save');
     }

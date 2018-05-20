@@ -9,7 +9,7 @@ const { argv: config } = yargs.options({
     type: 'boolean'
   },
   saveDev: {
-    alias: ['d'],
+    alias: ['D'],
     type: 'boolean'
   },
   debug: {
