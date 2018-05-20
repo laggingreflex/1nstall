@@ -12,7 +12,7 @@ Here's en example: adding a package `jquery`, which itself has no dependencies a
 
 ![][without.gif]
 
-[without.gif]: misc/without.gif
+[without.gif]: DOCS/assets/without.gif
 
 It's basically re-installing/liking ***all*** dependencies!
 
@@ -20,11 +20,9 @@ Not anymore! Here's an example adding the same `jquery` package with 1nstall:
 
 ![][one.gif]
 
-[one.gif]: misc/one.gif
+[one.gif]: DOCS/assets/one.gif
 
-Did you see that? [You wish you saw that!][moss]
-
-[moss]: https://www.youtube.com/watch?v=ZeK4ksWxhRc
+Much quicker!
 
 ## How?
 
