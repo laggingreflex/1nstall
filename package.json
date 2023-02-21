@@ -1,6 +1,6 @@
 {
   "name": "1nstall",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Install a package as if it was the only package",
   "type": "module",
   "main": "lib/index.js",
